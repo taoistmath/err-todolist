@@ -1,5 +1,4 @@
 from errbot import BotPlugin, botcmd
-from errbot.utils import get_sender_username
 import logging
 import time
 import datetime
@@ -69,7 +68,7 @@ class TodoList(BotPlugin):
   @botcmd
   def todo_create(self, mess, args):
     """Creates a new entry on the todo list. Syntax: !todo create <title>."""
-    self.l.append(Entry(args, get_sender_username(mess)))
+    self.l.append(Entry(args, mess.frm.person))
     self.write_csv_file()
     return "Created a new entry with id " + str(len(self.l)-1) + ", use !todo describe " + str(len(self.l)-1) + " to add a detailed description."
 
