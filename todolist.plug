@@ -6,4 +6,4 @@ Name = Todo list
 Module = todolist
     
 [Documentation]
-Description = A simple todo-list to manage things that guybrush needs
+Description = A simple todo-list to manage things
